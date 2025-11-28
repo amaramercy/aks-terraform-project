@@ -1,0 +1,24 @@
+project_name = "cloudproj"
+environment  = "dev"
+location     = "australiacentral"
+
+address_space = ["10.10.0.0/16"]
+
+subnets = {
+  public1  = { address_prefixes = ["10.10.1.0/24"] }  # For Load Balancer / Ingress
+  public2  = { address_prefixes = ["10.10.2.0/24"] }  # For additional public resources
+  aks      = { address_prefixes = ["10.10.3.0/24"] }  # Private subnet for AKS node pools
+  database = { address_prefixes = ["10.10.4.0/24"] }  # Private subnet for MySQL
+}
+
+
+aks_node_count = 2
+
+mysql_admin_username = "adminuser"
+mysql_admin_password = "DevStrongPassword123!"
+
+# Optional: Override ACR SKU (default is "Standard"; use "Premium" for geo-replication)
+# acr_sku = "Standard"
+
+# Optional: Override MySQL SKU (default is "GP_Standard_D2ds_v4"; adjust per your subscription)
+# mysql_sku_name = "GP_Standard_D2ds_v4"
