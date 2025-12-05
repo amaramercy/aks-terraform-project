@@ -37,6 +37,7 @@ aks-terraform-project/
 │  └─ prod/
 ├─ scripts/
 │  ├─ get-kubeconfig.sh
+│  ├─ setup-remote-backend.sh
 │  ├─ terraform.ps1
 │  └─ terraform.sh
 ├─ providers.tf
