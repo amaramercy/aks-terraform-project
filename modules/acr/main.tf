@@ -32,6 +32,9 @@ resource "azurerm_private_endpoint" "acr_pe" {
     is_manual_connection           = false
     private_connection_resource_id = azurerm_container_registry.acr.id
     subresource_names              = ["registry"]
+
+    #subresource_names              = ["registry"]
+
   }
 }
 
