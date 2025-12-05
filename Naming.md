@@ -89,13 +89,13 @@ Use keys from tfvars: `egress`, `aks`, `database`
 
 ### **3.7 Azure Container Registry (ACR)**
 
-* Name: `<project><environment>acr` (no hyphen for Azure registry)
+* Name: `<project><environment>acr<unique-sufix>` (no hyphen for Azure registry)
 
 * Tags: `environment`, `project`
 
 ### **3.8 Azure Key Vault**
 
-* Name: `<project>-<environment>-kv`
+* Name: `<project>-<environment>-kv-<unique-suffix>`
 
 * Tags: `environment`, `project`
 
