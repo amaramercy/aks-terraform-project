@@ -1,0 +1,30 @@
+name: AKS Terraform Pipeline
+
+on: 
+    push:
+        branches:
+        - main
+    pull_request:
+        branches:
+        - main
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: 'Deployment Environment'
+                required: true
+                type: choice
+                options:
+                    - dev
+                    - stage 
+                    - prod
+
+env:
+    TF_VERSION: '1.7.5'
+    AZURE_REGION: 'australiacentral'
+
+jobs:
+    terraform:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
